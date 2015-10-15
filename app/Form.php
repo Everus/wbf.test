@@ -96,7 +96,7 @@ class Form extends Component
 
     public function render()
     {
-        $fields = '';
+        $fields = array();
         foreach($this->fields as $field) {
             $fields[$field->getName()] = $field->render();
         }
