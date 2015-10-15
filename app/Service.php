@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Helper class with provide easy access for application wide helpers
  */

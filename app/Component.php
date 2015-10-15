@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Mark
- * Date: 15.10.2015
- * Time: 9:43
- */
+
 class Component
 {
     /**
