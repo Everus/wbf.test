@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Mark
+ * Date: 15.10.2015
+ * Time: 9:43
+ */
+class Component
+{
+    /**
+     * @var Service
+    */
+    private $service = null;
+
+    /**
+     * @param string
+     * @return mixed
+    */
+    protected function get($name) {
+        $this->ensureService();
+        return $this->service->get($name);
+    }
+
+    private function ensureService()
+    {
+        if($this->service === null) {
+            $this->service = new Service();
+        }
+    }
+
+}
