@@ -16,6 +16,15 @@ class queryBuilder
     }
 
     /**
+     * @return $this
+     */
+    public function delete()
+    {
+        $this->query = 'DELETE';
+        return $this;
+    }
+
+    /**
      * @param string
      * @return queryBuilder
      */
