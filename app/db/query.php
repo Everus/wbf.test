@@ -6,6 +6,44 @@ class query
     private $query_string;
     private $arguments;
     private $result;
+    private $affected_rows;
+    private $insertId;
+
+    /**
+     * @return mixed
+     */
+    public function getInsertId()
+    {
+        return $this->insertId;
+    }
+
+    /**
+     * @param mixed $insertId
+     * @return query
+     */
+    public function setInsertId($insertId)
+    {
+        $this->insertId = $insertId;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAffectedRows()
+    {
+        return $this->affected_rows;
+    }
+
+    /**
+     * @param mixed $affected_rows
+     * @return query
+     */
+    public function setAffectedRows($affected_rows)
+    {
+        $this->affected_rows = $affected_rows;
+        return $this;
+    }
 
     /**
      * @return mixed

@@ -36,42 +36,54 @@ class queryBuilder
 
     /**
      * @param string $condition
+     * @param string
      * @param string $argument
      * @return $this
      */
-    public function where($condition, $argument = '')
+    public function where($condition, $type = null ,$argument = null)
     {
         $this->query .= ' WHERE '.$condition;
         if(!is_null($argument)) {
-            $this->args[] = $argument;
+            $this->args[] = array(
+                'type' => $type,
+                'argument' => $argument,
+            );
         }
         return $this;
     }
 
     /**
      * @param string $condition
+     * @param string
      * @param mixed $argument
      * @return $this
      */
-    public function andWhere($condition, $argument = null)
+    public function andWhere($condition, $type = null ,$argument = null)
     {
         $this->query .= ' AND '.$condition;
         if(!is_null($argument)) {
-            $this->args[] = $argument;
+            $this->args[] = array(
+                'type' => $type,
+                'argument' => $argument,
+            );
         }
         return $this;
     }
 
     /**
      * @param string $condition
+     * @param string
      * @param mixed $argument
      * @return $this
      */
-    public function orWhere($condition, $argument = null)
+    public function orWhere($condition, $type = null ,$argument = null)
     {
         $this->query .= ' OR '.$condition;
         if(!is_null($argument)) {
-            $this->args[] = $argument;
+            $this->args[] = array(
+                'type' => $type,
+                'argument' => $argument,
+            );
         }
         return $this;
     }
