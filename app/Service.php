@@ -39,6 +39,10 @@ class Service
     }
 
     public function get($name) {
-        return $this->services[$name];
+        if(isset($this->services[$name])) {
+            return $this->services[$name];
+        } else {
+            throw new Exception('Service not found(name = '.$name.')');
+        }
     }
 }
